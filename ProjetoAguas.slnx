@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Biblioteca/Biblioteca.csproj" />
+  <Project Path="WinFormsAguas/WinFormsAguas.csproj" Id="8e6a7a16-66ce-4175-94b4-b7b6fa4ec801" />
+</Solution>
