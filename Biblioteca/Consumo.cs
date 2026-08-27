@@ -18,7 +18,7 @@ namespace Biblioteca
 
         public string Observacao { get; set; }
 
-
+        public bool TemFatura { get; set; }
 
 
     }

@@ -21,15 +21,31 @@ namespace Biblioteca
         public string Email { get; set; }
 
         public bool Estado { get; set; }
+  
+        public string EstadoTexto
+        {
+            get {  return (Estado) ? "Ativo" : "Inativo"; }
+        }
 
         public List<Contador> ListaContadores { get; set; }
 
-        public override string ToString()
+        public List<Consumo> ListaConsumos { get; set; }
+
+        public List<Fatura> ListaFaturas { get; set; }
+
+        //uso no form consumo
+        public String NomeENif
         {
-            return $"{Nome} - {Nif} - {Morada} - {Email} - {Contacto}";
+            get
+            {
+                return $"{Nome} - NIF - {Nif}";
+            }
         }
 
-
+        public override string ToString()
+        {
+            return $"{Nome} - {Nif}";
+        }
 
     }
 }

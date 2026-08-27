@@ -13,14 +13,18 @@ namespace Biblioteca
         public DateTime DataInstalacao { get; set; }
         public bool Estado { get; set; }
 
-        public List<Consumo> Consumos { get; set; } = null!;
-         
+        public string EstadoTexto
+        {
+            get { return (Estado) ? "Ativo" : "Inativo"; }
+        }
 
-        
+        public override string ToString()
+        {
+            return $"{Id}";
+        }
 
+        public List<Consumo> ListaConsumos { get; set; }
 
-
-
-
+        public List<Fatura> ListaFaturas { get; set; }
     }
 }
