@@ -56,17 +56,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1194, 139);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // btnAbout
             // 
             btnAbout.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAbout.ForeColor = SystemColors.HotTrack;
+            btnAbout.ForeColor = Color.FromArgb(21, 48, 91);
             btnAbout.Location = new Point(983, 48);
             btnAbout.Name = "btnAbout";
             btnAbout.Size = new Size(129, 51);
             btnAbout.TabIndex = 6;
             btnAbout.Text = "Sobre";
             btnAbout.UseVisualStyleBackColor = true;
+            btnAbout.Click += btnAbout_Click;
             // 
             // pictureBox2
             // 
@@ -82,11 +84,11 @@
             // 
             lblLogo.AutoSize = true;
             lblLogo.BackColor = Color.Transparent;
-            lblLogo.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogo.ForeColor = SystemColors.HotTrack;
-            lblLogo.Location = new Point(220, 65);
+            lblLogo.Font = new Font("Tahoma", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogo.ForeColor = Color.FromArgb(21, 48, 91);
+            lblLogo.Location = new Point(260, 74);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(364, 20);
+            lblLogo.Size = new Size(376, 23);
             lblLogo.TabIndex = 2;
             lblLogo.Text = "CONECTA VOCÊ AO QUE É ESSENCIAL";
             // 
@@ -94,16 +96,18 @@
             // 
             btnCadastroCliente.BackColor = Color.Transparent;
             btnCadastroCliente.BackgroundImageLayout = ImageLayout.Zoom;
-            btnCadastroCliente.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadastroCliente.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCadastroCliente.ForeColor = Color.FromArgb(21, 48, 91);
             btnCadastroCliente.Image = (Image)resources.GetObject("btnCadastroCliente.Image");
             btnCadastroCliente.Location = new Point(145, 555);
             btnCadastroCliente.Name = "btnCadastroCliente";
             btnCadastroCliente.Size = new Size(169, 129);
             btnCadastroCliente.TabIndex = 2;
-            btnCadastroCliente.Text = "Cliente";
+            btnCadastroCliente.Text = "Cadastrar Cliente";
             btnCadastroCliente.TextAlign = ContentAlignment.BottomCenter;
             btnCadastroCliente.TextImageRelation = TextImageRelation.ImageAboveText;
             btnCadastroCliente.UseVisualStyleBackColor = false;
+            btnCadastroCliente.Click += btnCadastroCliente_Click;
             // 
             // pictureBox3
             // 
@@ -127,18 +131,24 @@
             // 
             // btnContador
             // 
-            btnContador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnContador.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnContador.ForeColor = Color.FromArgb(21, 48, 91);
+            btnContador.Image = (Image)resources.GetObject("btnContador.Image");
             btnContador.Location = new Point(381, 555);
             btnContador.Name = "btnContador";
             btnContador.Size = new Size(169, 129);
             btnContador.TabIndex = 3;
-            btnContador.Text = "Contador";
+            btnContador.Text = "Cadastrar Contador";
+            btnContador.TextAlign = ContentAlignment.BottomCenter;
+            btnContador.TextImageRelation = TextImageRelation.ImageAboveText;
             btnContador.UseVisualStyleBackColor = true;
+            btnContador.Click += btnContador_Click;
             // 
             // btnLeituraContador
             // 
             btnLeituraContador.BackgroundImageLayout = ImageLayout.None;
-            btnLeituraContador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLeituraContador.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLeituraContador.ForeColor = Color.FromArgb(21, 48, 91);
             btnLeituraContador.Image = (Image)resources.GetObject("btnLeituraContador.Image");
             btnLeituraContador.Location = new Point(623, 555);
             btnLeituraContador.Name = "btnLeituraContador";
@@ -148,19 +158,22 @@
             btnLeituraContador.TextAlign = ContentAlignment.BottomCenter;
             btnLeituraContador.TextImageRelation = TextImageRelation.ImageAboveText;
             btnLeituraContador.UseVisualStyleBackColor = true;
+            btnLeituraContador.Click += btnLeituraContador_Click;
             // 
             // btnFaturacao
             // 
-            btnFaturacao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnFaturacao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnFaturacao.ForeColor = Color.FromArgb(21, 48, 91);
             btnFaturacao.Image = (Image)resources.GetObject("btnFaturacao.Image");
             btnFaturacao.Location = new Point(857, 555);
             btnFaturacao.Name = "btnFaturacao";
             btnFaturacao.Size = new Size(169, 129);
             btnFaturacao.TabIndex = 5;
-            btnFaturacao.Text = "Faturação";
+            btnFaturacao.Text = "Consultar Faturas";
             btnFaturacao.TextAlign = ContentAlignment.BottomCenter;
             btnFaturacao.TextImageRelation = TextImageRelation.ImageAboveText;
             btnFaturacao.UseVisualStyleBackColor = true;
+            btnFaturacao.Click += btnFaturacao_Click;
             // 
             // FormPrincipal
             // 
@@ -177,6 +190,8 @@
             Controls.Add(panel1);
             Name = "FormPrincipal";
             Text = "Form1";
+            FormClosing += FormPrincipal_FormClosing;
+            Load += FormPrincipal_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

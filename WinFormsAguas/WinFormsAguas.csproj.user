@@ -10,10 +10,28 @@
     <Compile Update="FormConsumo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormConsumoLeitura.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormContador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormFaturacao.cs">
+    <Compile Update="FormEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormEditarConsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormEditarContador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormFatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormVisualizarFatura.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
