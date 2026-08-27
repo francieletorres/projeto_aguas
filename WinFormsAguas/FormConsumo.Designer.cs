@@ -32,30 +32,32 @@
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             lblLogo = new Label();
-            lblDataLeitura = new Label();
-            lblLeitura = new Label();
             label2 = new Label();
-            txtLeitura = new TextBox();
-            dateTimePickerLeitura = new DateTimePicker();
-            btnLeitura = new Button();
+            lblSelecionarCliente = new Label();
+            ComboBoxClientes = new ComboBox();
+            label1 = new Label();
+            ComboBoxContadores = new ComboBox();
+            DataGridViewListaConsumos = new DataGridView();
             btnCancelar = new Button();
-            lblObs = new Label();
-            lblVolumeConsumido = new Label();
-            txtVolumeConsumido = new TextBox();
-            txtObs = new TextBox();
+            btnRegistarLeitura = new Button();
+            lblListaConsumos = new Label();
+            btnApagarConsumo = new Button();
+            btnEditarConsumo = new Button();
+            btnGerarFatura = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListaConsumos).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(21, 48, 91);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(lblLogo);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1191, 139);
+            panel1.Size = new Size(1163, 139);
             panel1.TabIndex = 2;
             // 
             // pictureBox2
@@ -73,140 +75,178 @@
             lblLogo.AutoSize = true;
             lblLogo.BackColor = Color.Transparent;
             lblLogo.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogo.ForeColor = SystemColors.HotTrack;
+            lblLogo.ForeColor = Color.White;
             lblLogo.Location = new Point(220, 65);
             lblLogo.Name = "lblLogo";
             lblLogo.Size = new Size(364, 20);
             lblLogo.TabIndex = 2;
             lblLogo.Text = "CONECTA VOCÊ AO QUE É ESSENCIAL";
             // 
-            // lblDataLeitura
-            // 
-            lblDataLeitura.AutoSize = true;
-            lblDataLeitura.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDataLeitura.Location = new Point(319, 282);
-            lblDataLeitura.Name = "lblDataLeitura";
-            lblDataLeitura.Size = new Size(163, 25);
-            lblDataLeitura.TabIndex = 6;
-            lblDataLeitura.Text = "Data da leitura";
-            // 
-            // lblLeitura
-            // 
-            lblLeitura.AutoSize = true;
-            lblLeitura.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLeitura.Location = new Point(319, 355);
-            lblLeitura.Name = "lblLeitura";
-            lblLeitura.Size = new Size(177, 25);
-            lblLeitura.TabIndex = 7;
-            lblLeitura.Text = "Leitura contador";
-            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(438, 209);
+            label2.Font = new Font("Arial", 18F);
+            label2.Location = new Point(432, 158);
             label2.Name = "label2";
-            label2.Size = new Size(295, 28);
+            label2.Size = new Size(284, 27);
             label2.TabIndex = 8;
             label2.Text = "Comunicação de Leituras";
             // 
-            // txtLeitura
+            // lblSelecionarCliente
             // 
-            txtLeitura.Location = new Point(319, 380);
-            txtLeitura.Name = "txtLeitura";
-            txtLeitura.Size = new Size(561, 23);
-            txtLeitura.TabIndex = 10;
+            lblSelecionarCliente.AutoSize = true;
+            lblSelecionarCliente.Font = new Font("Arial", 14F);
+            lblSelecionarCliente.Location = new Point(303, 217);
+            lblSelecionarCliente.Name = "lblSelecionarCliente";
+            lblSelecionarCliente.Size = new Size(164, 22);
+            lblSelecionarCliente.TabIndex = 26;
+            lblSelecionarCliente.Text = "Selecionar Cliente";
             // 
-            // dateTimePickerLeitura
+            // ComboBoxClientes
             // 
-            dateTimePickerLeitura.CalendarFont = new Font("Century", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePickerLeitura.Font = new Font("Century", 14.1428576F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePickerLeitura.Format = DateTimePickerFormat.Short;
-            dateTimePickerLeitura.Location = new Point(319, 310);
-            dateTimePickerLeitura.Name = "dateTimePickerLeitura";
-            dateTimePickerLeitura.Size = new Size(135, 30);
-            dateTimePickerLeitura.TabIndex = 11;
+            ComboBoxClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxClientes.Font = new Font("Arial", 14F);
+            ComboBoxClientes.FormattingEnabled = true;
+            ComboBoxClientes.Location = new Point(303, 245);
+            ComboBoxClientes.Name = "ComboBoxClientes";
+            ComboBoxClientes.Size = new Size(604, 30);
+            ComboBoxClientes.TabIndex = 25;
+            ComboBoxClientes.SelectedIndexChanged += ComboBoxClientes_SelectedIndexChanged;
             // 
-            // btnLeitura
+            // label1
             // 
-            btnLeitura.BackColor = SystemColors.Control;
-            btnLeitura.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLeitura.Location = new Point(683, 645);
-            btnLeitura.Name = "btnLeitura";
-            btnLeitura.Size = new Size(185, 50);
-            btnLeitura.TabIndex = 15;
-            btnLeitura.Text = "Enviar Leitura";
-            btnLeitura.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 14F);
+            label1.Location = new Point(303, 280);
+            label1.Name = "label1";
+            label1.Size = new Size(183, 22);
+            label1.TabIndex = 28;
+            label1.Text = "Selecionar Contador";
+            // 
+            // ComboBoxContadores
+            // 
+            ComboBoxContadores.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxContadores.Font = new Font("Arial", 14F);
+            ComboBoxContadores.FormattingEnabled = true;
+            ComboBoxContadores.Location = new Point(303, 308);
+            ComboBoxContadores.Name = "ComboBoxContadores";
+            ComboBoxContadores.Size = new Size(604, 30);
+            ComboBoxContadores.TabIndex = 27;
+            ComboBoxContadores.SelectedIndexChanged += ComboBoxContadores_SelectedIndexChanged;
+            // 
+            // DataGridViewListaConsumos
+            // 
+            DataGridViewListaConsumos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListaConsumos.BackgroundColor = Color.White;
+            DataGridViewListaConsumos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewListaConsumos.Location = new Point(287, 492);
+            DataGridViewListaConsumos.MultiSelect = false;
+            DataGridViewListaConsumos.Name = "DataGridViewListaConsumos";
+            DataGridViewListaConsumos.ReadOnly = true;
+            DataGridViewListaConsumos.Size = new Size(611, 144);
+            DataGridViewListaConsumos.TabIndex = 29;
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = SystemColors.Control;
-            btnCancelar.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(495, 645);
+            btnCancelar.BackColor = Color.FromArgb(24, 104, 153);
+            btnCancelar.Font = new Font("Arial", 14F);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(341, 372);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(130, 50);
-            btnCancelar.TabIndex = 16;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Size = new Size(243, 50);
+            btnCancelar.TabIndex = 31;
+            btnCancelar.Text = "Limpar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
-            // lblObs
+            // btnRegistarLeitura
             // 
-            lblObs.AutoSize = true;
-            lblObs.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblObs.Location = new Point(319, 500);
-            lblObs.Name = "lblObs";
-            lblObs.Size = new Size(125, 25);
-            lblObs.TabIndex = 17;
-            lblObs.Text = "Observação";
+            btnRegistarLeitura.BackColor = Color.FromArgb(24, 104, 153);
+            btnRegistarLeitura.Font = new Font("Arial", 14F);
+            btnRegistarLeitura.ForeColor = Color.White;
+            btnRegistarLeitura.Location = new Point(655, 372);
+            btnRegistarLeitura.Name = "btnRegistarLeitura";
+            btnRegistarLeitura.Size = new Size(243, 50);
+            btnRegistarLeitura.TabIndex = 30;
+            btnRegistarLeitura.Text = "Inserir Leitura";
+            btnRegistarLeitura.UseVisualStyleBackColor = false;
+            btnRegistarLeitura.Click += btnRegistarLeitura_Click;
             // 
-            // lblVolumeConsumido
+            // lblListaConsumos
             // 
-            lblVolumeConsumido.AutoSize = true;
-            lblVolumeConsumido.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblVolumeConsumido.Location = new Point(319, 430);
-            lblVolumeConsumido.Name = "lblVolumeConsumido";
-            lblVolumeConsumido.Size = new Size(205, 25);
-            lblVolumeConsumido.TabIndex = 18;
-            lblVolumeConsumido.Text = "Volume Consumido";
+            lblListaConsumos.AutoSize = true;
+            lblListaConsumos.Font = new Font("Arial", 14F);
+            lblListaConsumos.Location = new Point(294, 457);
+            lblListaConsumos.Name = "lblListaConsumos";
+            lblListaConsumos.Size = new Size(174, 22);
+            lblListaConsumos.TabIndex = 39;
+            lblListaConsumos.Text = "Lista de Consumos";
             // 
-            // txtVolumeConsumido
+            // btnApagarConsumo
             // 
-            txtVolumeConsumido.Location = new Point(319, 458);
-            txtVolumeConsumido.Name = "txtVolumeConsumido";
-            txtVolumeConsumido.Size = new Size(561, 23);
-            txtVolumeConsumido.TabIndex = 19;
+            btnApagarConsumo.BackColor = Color.FromArgb(24, 104, 153);
+            btnApagarConsumo.Font = new Font("Arial", 14F);
+            btnApagarConsumo.ForeColor = Color.White;
+            btnApagarConsumo.Location = new Point(341, 668);
+            btnApagarConsumo.Name = "btnApagarConsumo";
+            btnApagarConsumo.Size = new Size(243, 50);
+            btnApagarConsumo.TabIndex = 41;
+            btnApagarConsumo.Text = "Apagar Consumo";
+            btnApagarConsumo.UseVisualStyleBackColor = false;
+            btnApagarConsumo.Click += btnApagarConsumo_Click;
             // 
-            // txtObs
+            // btnEditarConsumo
             // 
-            txtObs.Location = new Point(319, 528);
-            txtObs.Multiline = true;
-            txtObs.Name = "txtObs";
-            txtObs.Size = new Size(561, 89);
-            txtObs.TabIndex = 20;
+            btnEditarConsumo.BackColor = Color.FromArgb(24, 104, 153);
+            btnEditarConsumo.Font = new Font("Arial", 14F);
+            btnEditarConsumo.ForeColor = Color.White;
+            btnEditarConsumo.Location = new Point(655, 668);
+            btnEditarConsumo.Name = "btnEditarConsumo";
+            btnEditarConsumo.Size = new Size(243, 50);
+            btnEditarConsumo.TabIndex = 40;
+            btnEditarConsumo.Text = "Editar Consumo";
+            btnEditarConsumo.UseVisualStyleBackColor = false;
+            btnEditarConsumo.Click += btnEditarConsumo_Click;
+            // 
+            // btnGerarFatura
+            // 
+            btnGerarFatura.BackColor = Color.FromArgb(24, 104, 153);
+            btnGerarFatura.Font = new Font("Arial", 14F);
+            btnGerarFatura.ForeColor = Color.White;
+            btnGerarFatura.Location = new Point(955, 517);
+            btnGerarFatura.Name = "btnGerarFatura";
+            btnGerarFatura.Size = new Size(157, 95);
+            btnGerarFatura.TabIndex = 42;
+            btnGerarFatura.Text = "Gerar Fatura";
+            btnGerarFatura.UseVisualStyleBackColor = false;
+            btnGerarFatura.Click += btnGerarFatura_Click;
             // 
             // FormConsumo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1191, 762);
-            Controls.Add(txtObs);
-            Controls.Add(txtVolumeConsumido);
-            Controls.Add(lblVolumeConsumido);
-            Controls.Add(lblObs);
+            ClientSize = new Size(1163, 766);
+            Controls.Add(btnGerarFatura);
+            Controls.Add(btnApagarConsumo);
+            Controls.Add(btnEditarConsumo);
+            Controls.Add(lblListaConsumos);
             Controls.Add(btnCancelar);
-            Controls.Add(btnLeitura);
-            Controls.Add(dateTimePickerLeitura);
-            Controls.Add(txtLeitura);
+            Controls.Add(btnRegistarLeitura);
+            Controls.Add(DataGridViewListaConsumos);
+            Controls.Add(label1);
+            Controls.Add(ComboBoxContadores);
+            Controls.Add(lblSelecionarCliente);
+            Controls.Add(ComboBoxClientes);
             Controls.Add(label2);
-            Controls.Add(lblLeitura);
-            Controls.Add(lblDataLeitura);
             Controls.Add(panel1);
             Name = "FormConsumo";
             Text = "FormConsumo";
+            Load += FormConsumo_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListaConsumos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -216,16 +256,17 @@
         private Panel panel1;
         private PictureBox pictureBox2;
         private Label lblLogo;
-        private Label lblDataLeitura;
-        private Label lblLeitura;
         private Label label2;
-        private TextBox txtLeitura;
-        private DateTimePicker dateTimePickerLeitura;
-        private Button btnLeitura;
+        private Label lblSelecionarCliente;
+        private ComboBox ComboBoxClientes;
+        private Label label1;
+        private ComboBox ComboBoxContadores;
+        private DataGridView DataGridViewListaConsumos;
         private Button btnCancelar;
-        private Label lblObs;
-        private Label lblVolumeConsumido;
-        private TextBox txtVolumeConsumido;
-        private TextBox txtObs;
+        private Button btnRegistarLeitura;
+        private Label lblListaConsumos;
+        private Button btnApagarConsumo;
+        private Button btnEditarConsumo;
+        private Button btnGerarFatura;
     }
 }
