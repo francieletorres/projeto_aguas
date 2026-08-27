@@ -45,30 +45,33 @@
             txtEmail = new TextBox();
             btnRegistarCliente = new Button();
             btnCancelar = new Button();
-            btnCriarContador = new Button();
+            btnEditarCliente = new Button();
             btnApagarCliente = new Button();
-            listBoxClientes = new ListBox();
+            DataGridViewClientes = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewClientes).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(21, 48, 91);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(lblLogo);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1184, 139);
+            panel1.Size = new Size(1691, 222);
             panel1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(91, 22);
+            pictureBox2.Location = new Point(196, 20);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(114, 104);
+            pictureBox2.Size = new Size(163, 173);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
@@ -78,117 +81,138 @@
             lblLogo.AutoSize = true;
             lblLogo.BackColor = Color.Transparent;
             lblLogo.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogo.ForeColor = SystemColors.HotTrack;
-            lblLogo.Location = new Point(220, 65);
+            lblLogo.ForeColor = Color.White;
+            lblLogo.Location = new Point(430, 105);
+            lblLogo.Margin = new Padding(4, 0, 4, 0);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(364, 20);
+            lblLogo.Size = new Size(524, 28);
             lblLogo.TabIndex = 2;
             lblLogo.Text = "CONECTA VOCÊ AO QUE É ESSENCIAL";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(507, 162);
+            label2.Font = new Font("Arial", 18F);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(726, 283);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(200, 28);
+            label2.Size = new Size(283, 41);
             label2.TabIndex = 3;
             label2.Text = "Cadastro Cliente";
             // 
             // lblMorada
             // 
             lblMorada.AutoSize = true;
-            lblMorada.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMorada.Location = new Point(323, 260);
+            lblMorada.Font = new Font("Arial", 14F);
+            lblMorada.Location = new Point(463, 447);
+            lblMorada.Margin = new Padding(4, 0, 4, 0);
             lblMorada.Name = "lblMorada";
-            lblMorada.Size = new Size(88, 25);
+            lblMorada.Size = new Size(107, 32);
             lblMorada.TabIndex = 4;
             lblMorada.Text = "Morada";
             // 
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(323, 199);
+            lblNome.Font = new Font("Arial", 14F);
+            lblNome.ForeColor = Color.Black;
+            lblNome.Location = new Point(463, 345);
+            lblNome.Margin = new Padding(4, 0, 4, 0);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(70, 25);
+            lblNome.Size = new Size(88, 32);
             lblNome.TabIndex = 5;
             lblNome.Text = "Nome";
             // 
             // lblNif
             // 
             lblNif.AutoSize = true;
-            lblNif.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNif.Location = new Point(323, 384);
+            lblNif.Font = new Font("Arial", 14F);
+            lblNif.Location = new Point(463, 653);
+            lblNif.Margin = new Padding(4, 0, 4, 0);
             lblNif.Name = "lblNif";
-            lblNif.Size = new Size(254, 25);
+            lblNif.Size = new Size(311, 32);
             lblNif.TabIndex = 6;
             lblNif.Text = "Número de Contribuinte";
             // 
             // lblContacto
             // 
             lblContacto.AutoSize = true;
-            lblContacto.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContacto.Location = new Point(323, 319);
+            lblContacto.Font = new Font("Arial", 14F);
+            lblContacto.Location = new Point(463, 545);
+            lblContacto.Margin = new Padding(4, 0, 4, 0);
             lblContacto.Name = "lblContacto";
-            lblContacto.Size = new Size(99, 25);
+            lblContacto.Size = new Size(125, 32);
             lblContacto.TabIndex = 7;
             lblContacto.Text = "Contacto";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Century", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(323, 442);
+            lblEmail.Font = new Font("Arial", 14F);
+            lblEmail.Location = new Point(463, 750);
+            lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(72, 25);
+            lblEmail.Size = new Size(84, 32);
             lblEmail.TabIndex = 8;
             lblEmail.Text = "Email";
             // 
             // txtNomeCliente
             // 
-            txtNomeCliente.Location = new Point(323, 224);
+            txtNomeCliente.Font = new Font("Arial", 14F);
+            txtNomeCliente.Location = new Point(463, 387);
+            txtNomeCliente.Margin = new Padding(4, 5, 4, 5);
             txtNomeCliente.Name = "txtNomeCliente";
-            txtNomeCliente.Size = new Size(561, 23);
+            txtNomeCliente.Size = new Size(800, 40);
             txtNomeCliente.TabIndex = 9;
             // 
             // txtMorada
             // 
-            txtMorada.Location = new Point(323, 286);
+            txtMorada.Font = new Font("Arial", 14F);
+            txtMorada.Location = new Point(463, 490);
+            txtMorada.Margin = new Padding(4, 5, 4, 5);
             txtMorada.Name = "txtMorada";
-            txtMorada.Size = new Size(561, 23);
+            txtMorada.Size = new Size(800, 40);
             txtMorada.TabIndex = 10;
             // 
             // txtContacto
             // 
-            txtContacto.Location = new Point(323, 344);
+            txtContacto.Font = new Font("Arial", 14F);
+            txtContacto.Location = new Point(463, 587);
+            txtContacto.Margin = new Padding(4, 5, 4, 5);
             txtContacto.MaxLength = 9;
             txtContacto.Name = "txtContacto";
-            txtContacto.Size = new Size(561, 23);
+            txtContacto.Size = new Size(800, 40);
             txtContacto.TabIndex = 11;
             // 
             // txtNif
             // 
-            txtNif.Location = new Point(323, 410);
+            txtNif.Font = new Font("Arial", 14F);
+            txtNif.Location = new Point(463, 697);
+            txtNif.Margin = new Padding(4, 5, 4, 5);
             txtNif.MaxLength = 9;
             txtNif.Name = "txtNif";
-            txtNif.Size = new Size(561, 23);
+            txtNif.Size = new Size(800, 40);
             txtNif.TabIndex = 12;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(323, 466);
+            txtEmail.Font = new Font("Arial", 14F);
+            txtEmail.Location = new Point(463, 790);
+            txtEmail.Margin = new Padding(4, 5, 4, 5);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(561, 23);
+            txtEmail.Size = new Size(800, 40);
             txtEmail.TabIndex = 13;
             // 
             // btnRegistarCliente
             // 
-            btnRegistarCliente.BackColor = SystemColors.Control;
-            btnRegistarCliente.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRegistarCliente.Location = new Point(752, 510);
+            btnRegistarCliente.BackColor = Color.FromArgb(24, 104, 153);
+            btnRegistarCliente.Font = new Font("Arial", 14F);
+            btnRegistarCliente.ForeColor = Color.White;
+            btnRegistarCliente.Location = new Point(1141, 863);
+            btnRegistarCliente.Margin = new Padding(4, 5, 4, 5);
             btnRegistarCliente.Name = "btnRegistarCliente";
-            btnRegistarCliente.Size = new Size(130, 50);
+            btnRegistarCliente.Size = new Size(186, 83);
             btnRegistarCliente.TabIndex = 14;
             btnRegistarCliente.Text = "Registar";
             btnRegistarCliente.UseVisualStyleBackColor = false;
@@ -196,56 +220,70 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = SystemColors.Control;
-            btnCancelar.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(581, 510);
+            btnCancelar.BackColor = Color.FromArgb(24, 104, 153);
+            btnCancelar.Font = new Font("Arial", 14F);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(909, 863);
+            btnCancelar.Margin = new Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(130, 50);
+            btnCancelar.Size = new Size(186, 83);
             btnCancelar.TabIndex = 15;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Limpar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // btnCriarContador
+            // btnEditarCliente
             // 
-            btnCriarContador.BackColor = SystemColors.Control;
-            btnCriarContador.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCriarContador.Location = new Point(981, 580);
-            btnCriarContador.Name = "btnCriarContador";
-            btnCriarContador.Size = new Size(138, 68);
-            btnCriarContador.TabIndex = 18;
-            btnCriarContador.Text = "Criar Contador";
-            btnCriarContador.UseVisualStyleBackColor = false;
+            btnEditarCliente.BackColor = Color.FromArgb(24, 104, 153);
+            btnEditarCliente.Font = new Font("Arial", 14F);
+            btnEditarCliente.ForeColor = Color.White;
+            btnEditarCliente.Location = new Point(1401, 987);
+            btnEditarCliente.Margin = new Padding(4, 5, 4, 5);
+            btnEditarCliente.Name = "btnEditarCliente";
+            btnEditarCliente.Size = new Size(197, 113);
+            btnEditarCliente.TabIndex = 18;
+            btnEditarCliente.Text = "Editar Cliente";
+            btnEditarCliente.UseVisualStyleBackColor = false;
+            btnEditarCliente.Click += btnEditarCliente_Click;
             // 
             // btnApagarCliente
             // 
-            btnApagarCliente.BackColor = SystemColors.Control;
-            btnApagarCliente.Font = new Font("Century", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnApagarCliente.Location = new Point(981, 666);
+            btnApagarCliente.BackColor = Color.FromArgb(24, 104, 153);
+            btnApagarCliente.Font = new Font("Arial", 14F);
+            btnApagarCliente.ForeColor = Color.White;
+            btnApagarCliente.Location = new Point(1401, 1110);
+            btnApagarCliente.Margin = new Padding(4, 5, 4, 5);
             btnApagarCliente.Name = "btnApagarCliente";
-            btnApagarCliente.Size = new Size(138, 68);
+            btnApagarCliente.Size = new Size(197, 113);
             btnApagarCliente.TabIndex = 19;
             btnApagarCliente.Text = "Apagar Cliente";
             btnApagarCliente.UseVisualStyleBackColor = false;
+            btnApagarCliente.Click += btnApagarCliente_Click;
             // 
-            // listBoxClientes
+            // DataGridViewClientes
             // 
-            listBoxClientes.FormattingEnabled = true;
-            listBoxClientes.ItemHeight = 15;
-            listBoxClientes.Location = new Point(76, 579);
-            listBoxClientes.Name = "listBoxClientes";
-            listBoxClientes.Size = new Size(875, 154);
-            listBoxClientes.TabIndex = 20;
+            DataGridViewClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewClientes.BackgroundColor = Color.White;
+            DataGridViewClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewClientes.Location = new Point(352, 987);
+            DataGridViewClientes.Margin = new Padding(4, 5, 4, 5);
+            DataGridViewClientes.MultiSelect = false;
+            DataGridViewClientes.Name = "DataGridViewClientes";
+            DataGridViewClientes.ReadOnly = true;
+            DataGridViewClientes.RowHeadersWidth = 62;
+            DataGridViewClientes.Size = new Size(1007, 228);
+            DataGridViewClientes.TabIndex = 20;
+            DataGridViewClientes.CellContentClick += DataGridViewClientes_CellContentClick;
             // 
             // FormCadCliente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1184, 760);
-            Controls.Add(listBoxClientes);
+            ClientSize = new Size(1691, 1283);
+            Controls.Add(DataGridViewClientes);
             Controls.Add(btnApagarCliente);
-            Controls.Add(btnCriarContador);
+            Controls.Add(btnEditarCliente);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistarCliente);
             Controls.Add(txtEmail);
@@ -260,12 +298,14 @@
             Controls.Add(lblMorada);
             Controls.Add(label2);
             Controls.Add(panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "FormCadCliente";
             Text = "FormCadCliente";
             Load += FormCadCliente_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -288,8 +328,8 @@
         private TextBox txtEmail;
         private Button btnRegistarCliente;
         private Button btnCancelar;
-        private Button btnCriarContador;
+        private Button btnEditarCliente;
         private Button btnApagarCliente;
-        private ListBox listBoxClientes;
+        private DataGridView DataGridViewClientes;
     }
 }
